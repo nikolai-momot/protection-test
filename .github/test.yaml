@@ -1,0 +1,17 @@
+name: Test Example
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    name: Notify Test
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Comment PR
+        uses: imesense/gha-echo-action@v0.2
+        with:
+          input-string: 'Test'
